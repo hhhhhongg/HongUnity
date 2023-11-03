@@ -5,6 +5,8 @@ using UnityEngine;
 public class card : MonoBehaviour
 {
     public Animator anim;
+    public AudioClip flip;
+    public AudioSource audioSource;
 
     void Start()
     {
@@ -18,6 +20,8 @@ public class card : MonoBehaviour
 
     public void openCard()
     {
+        audioSource.PlayOneShot(flip);
+
         if(Time.timeScale != 0)
         {
             // 1. Animator isOpen -> true  2. Front setActive = true 3. back setActive = false
